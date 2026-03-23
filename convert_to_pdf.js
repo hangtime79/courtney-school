@@ -32,15 +32,24 @@ const fs = require('fs');
     }
 
     // Apply consistency
-    syncSVG('#p3 svg.ag', '#p1 .char-mini:nth-child(2) svg');
-    syncSVG('#p3 svg.ag', '#p2 .ccard:nth-child(2) .ccard-art svg');
+    // NOBLE SERVIETTE: now at #p4 (Step 2)
+    syncSVG('#p4 svg.ag', '#p1 .char-mini:nth-child(2) svg');
+    syncSVG('#p4 svg.ag', '#p2 .ccard:nth-child(2) .ccard-art svg');
+    
+    // SIR FORKSWORTH: Title version (#p1) is source
     syncSVG('#p1 .char-mini:nth-child(1) svg', '#p2 .ccard:nth-child(1) .ccard-art svg');
     syncSVG('#p1 .char-mini:nth-child(1) svg', '#p6 .art-col svg');
+    
+    // SHADOW BLADE: Step 3 version (#p5) is source
     syncSVG('#p5 svg.as', '#p1 .char-mini:nth-child(4) svg');
     syncSVG('#p5 svg.as', '#p2 .ccard:nth-child(3) .ccard-art svg');
+    
+    // LADY SPOON: Step 5 version (#p7) is source
     syncSVG('#p7 svg.ab', '#p1 .char-mini:nth-child(5) svg');
     syncSVG('#p7 svg.ab', '#p2 .ccard:nth-child(4) .ccard-art svg');
-    syncSVG('#p4 svg', '#p1 .char-mini:nth-child(3) svg');
+    
+    // THE BATTLEGROUND PLATE: now at #p3 (Step 1)
+    syncSVG('#p3 svg', '#p1 .char-mini:nth-child(3) svg');
 
     // 2. Fix the Summary Diagram on Page 8
     const p8 = document.getElementById('p8');
@@ -252,5 +261,5 @@ const fs = require('fs');
   });
 
   await browser.close();
-  console.log('PDF restored successfully from original source.');
+  console.log('PDF regenerated with Step 1/2 Swap.');
 })();
