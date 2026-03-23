@@ -224,7 +224,14 @@ const fs = require('fs');
   const printCss = `
     @media print {
       @page { size: A4 landscape; margin: 0; }
-      html, body { overflow: visible !important; height: auto !important; background: white !important; }
+      html, body { 
+        overflow: visible !important; 
+        height: auto !important; 
+        background: white !important; 
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .title-rays { display: none !important; }
       .stage { position: static !important; display: block !important; }
       .pages { display: block !important; overflow: visible !important; }
       .page {
@@ -243,7 +250,11 @@ const fs = require('fs');
       }
       .nav, .scroll-hint, .dots, body::before { display: none !important; }
       .panel { box-shadow: 4px 4px 0 #0a0a0a !important; border: 3px solid #0a0a0a !important; width: 100% !important; }
-      .title-box { box-shadow: 6px 6px 0 #d4a017 !important; border: 4px solid #d4a017 !important; }
+      .title-box { 
+        background-color: #0a0a0a !important; 
+        box-shadow: 6px 6px 0 #d4a017 !important; 
+        border: 4px solid #d4a017 !important; 
+      }
       .art-col svg { max-height: 260px !important; width: auto !important; }
       .pt { font-size: 1.8rem !important; margin-bottom: 10px !important; }
     }
