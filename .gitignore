@@ -1,0 +1,5 @@
+node_modules/
+*.log
+debug_page8.png
+debug_screenshot.js
+.DS_Store
